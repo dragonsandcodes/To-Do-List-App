@@ -22,7 +22,8 @@ export const ToDoList: React.FC = () => {
     );
   };
 
-  const handleClick = () => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
     setTodos((todos) => [
       ...todos,
       { id: Date.now(), text: input, complated: false },
@@ -44,13 +45,15 @@ export const ToDoList: React.FC = () => {
           </li>
         ))}
       </ul>
-      <input
-        type="text"
-        placeholder="Add todo item"
-        value={input}
-        onChange={(e) => setInput(e.currentTarget.value)}
-      />
-      <button onClick={handleClick}>Add</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Add todo item"
+          value={input}
+          onChange={(e) => setInput(e.currentTarget.value)}
+        />
+        <button type="submit">Add</button>
+      </form>
     </div>
   );
 };

@@ -23,8 +23,11 @@ export const ToDoList: React.FC = () => {
   };
 
   const handleClick = () => {
-    const newTodo: item = { id: Date.now(), text: input, complated: false };
-    setTodos([...todos, newTodo]);
+    setTodos((todos) => [
+      ...todos,
+      { id: Date.now(), text: input, complated: false },
+    ]);
+    setInput("");
   };
 
   return (
@@ -44,6 +47,7 @@ export const ToDoList: React.FC = () => {
       <input
         type="text"
         placeholder="Add todo item"
+        value={input}
         onChange={(e) => setInput(e.currentTarget.value)}
       />
       <button onClick={handleClick}>Add</button>

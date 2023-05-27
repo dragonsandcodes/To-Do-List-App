@@ -4,8 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #e0eef3;
+  background-color: rgb(25, 25, 25);
   font-family: "Roboto", sans-serif;
+  color: whitesmoke;
 }
 
 .main-container {
@@ -14,6 +15,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+p,
+h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 
 input {
@@ -25,6 +35,7 @@ input {
   border: 1px solid #ccc;
   margin-left: 10px;
   margin-top: 40px;
+  color: black;
 }
 
 li {
@@ -34,9 +45,15 @@ li {
 button {
   height: 30px;
   width: 60px;
-  background-color: #1b0fff;
+  background-color: #ea21e0;
   color: white;
   font-size: 1.05rem;
-  margin-top: 10px;
+  margin: 10px;
   cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+p {
+  color: whitesmoke;
 }
